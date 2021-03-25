@@ -78,6 +78,65 @@ if (cn.WORKTYPE == 'private') {
           )
       },
     )
+    
+    Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: true, usage: Lang.IG_USAGE, desc: Lang.IG_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const link = match[1]
+
+        if (!link) return await message.sendMessage(errorMessage(Lang.IG_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.IG_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/igdl/?url=${link}`)
+          .then(async (response) => {
+            const {
+              creator,
+              type_post,
+              full_name,
+              username,
+              caption,
+              like,
+              comment,
+              thumb,
+              video,
+              duration,
+            } = response.data.result
+
+            const thumbBuffer = await axios.get(thumb, {
+              responseType: 'arraybuffer',
+            })
+            const videoBuffer = await axios.get(video, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.NAME}*: ${full_name}
+            *${Lang.USERNAME}*: ${username}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.TYPE_POST}*: ${type_post}
+            *${Lang.CAPTION}*: ${caption}
+            *${Lang.LIKE}*: ${like}
+            *${Lang.COMMENT}*: ${comment}
+            *${Lang.DURATION}*: ${duration}
+            `
+
+            await message.sendMessage(Buffer.from(thumbBuffer.data), MessageType.image, {
+              caption: msg,
+            })
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
+          )
+      },
+    )
 }
 else if (cn.WORKTYPE == 'public') {
 
@@ -126,6 +185,65 @@ else if (cn.WORKTYPE == 'public') {
           })
           .catch(
             async (err) => await message.sendMessage(errorMessage(Lang.NOT_FOUND + userName)),
+          )
+      },
+    )
+    
+    Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, usage: Lang.IG_USAGE, desc: Lang.IG_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const link = match[1]
+
+        if (!link) return await message.sendMessage(errorMessage(Lang.IG_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.IG_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/igdl/?url=${link}`)
+          .then(async (response) => {
+            const {
+              creator,
+              type_post,
+              full_name,
+              username,
+              caption,
+              like,
+              comment,
+              thumb,
+              video,
+              duration,
+            } = response.data.result
+
+            const thumbBuffer = await axios.get(thumb, {
+              responseType: 'arraybuffer',
+            })
+            const videoBuffer = await axios.get(video, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.NAME}*: ${full_name}
+            *${Lang.USERNAME}*: ${username}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.TYPE_POST}*: ${type_post}
+            *${Lang.CAPTION}*: ${caption}
+            *${Lang.LIKE}*: ${like}
+            *${Lang.COMMENT}*: ${comment}
+            *${Lang.DURATION}*: ${duration}
+            `
+
+            await message.sendMessage(Buffer.from(thumbBuffer.data), MessageType.image, {
+              caption: msg,
+            })
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
           )
       },
     )
