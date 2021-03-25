@@ -53,7 +53,6 @@
     "translatte": "^3.0.0",
     "wikijs": "^6.0.1",
     "yt-search": "^2.5.0",
-    "ytdl-core": "^4.3.0",
-    "@juliendu11/instagram-downloader": "0.2.0"
+    "ytdl-core": "^4.3.0"
   }
 }
