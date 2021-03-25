@@ -33,6 +33,9 @@ const spotifyApi = new SpotifyWebApi({
     clientSecret: '0e8439a1280a43aba9a5bc0a16f3f009'
 });
 //=====================================================================================
+//=================================== INSTAGRAM =======================================
+const instagram_download = require ('@juliendu11/instagram-downloader');
+//=====================================================================================
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 const Glang = Language.getString('github');
@@ -186,6 +189,34 @@ if (config.WORKTYPE == 'private') {
         yt.on('end', async () => {
             reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
             await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama.videoId + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
+        });
+    }));
+
+    Asena.addCommand({pattern: 'ig ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);
+
+        try {
+                    var arama = match[1];
+                } catch {
+                    return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
+                }
+
+        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text);
+
+        (async () => {
+            const igvid = await instagram_download.downloadMedia(arama, './')
+            })();
+        igvid.pipe(fs.createWriteStream('./' + arama + '.mp4'));
+
+        igvid.on('end', async () => {
+            reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
+            await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
         });
     }));
 
