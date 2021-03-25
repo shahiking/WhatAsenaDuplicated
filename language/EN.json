@@ -178,9 +178,7 @@
             "NO_RESULT": "*I couldn't find anything :(*",
             "DOWNLOADING_SONG": "```Downloading your song...```",
             "UPLOADING_SONG": "```Uploading your song...```",
-            "IG_VIDEO_DESC": "Downloads video from Instagram.",
             "VIDEO_DESC": "Downloads video from YouTube.",
-            "IG_NEED_VIDEO": "*Please write a video link!*\n*Example:* ```.ig https://www.instagram.com/p/CMmQgS5BXe4/```",
             "NEED_VIDEO": "*Please write a video link!*\n*Example:* ```.video https://www.youtube.com/watch?v=nAFlVm5qeBc```",
             "DOWNLOADING_VIDEO": "```Downloading your video...```",
             "UPLOADING_VIDEO": "```Uploading your video...```",
@@ -398,9 +396,13 @@
         },
         "instagram": {
             "NEED_WORD": "*Please enter username of any instagram account.*",
+            "IG_NEED_WORD": "Please enter video or photo URL...",
             "USAGE": ".insta <userName>",
+            "IG_USAGE": ".ig <URL>",
             "DESC": "Fetches user informations from instagram",
+            "IG_DESC": "To download video or photo from instagram",
             "LOADING": "Fetching user data.. please wait.",
+            "IG_LOADING": "Fetching media data... please wait",
             "USERNAME": "Username",
             "NAME": "Name",
             "BIO": "Biography",
@@ -409,7 +411,8 @@
             "ACCOUNT": "Account privacy",
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
-            "NOT_FOUND":"User not found: "
+            "NOT_FOUND":"User not found: ",
+            "IG_NOT_FOUND": "Video or Photo not found:"
         },
         "github": {
             "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy",
