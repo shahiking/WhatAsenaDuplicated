@@ -192,14 +192,14 @@ if (config.WORKTYPE == 'private') {
         });
     }));
 
-    Asena.addCommand({pattern: 'ig ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => {
+    Asena.addCommand({pattern: 'ig ?(.*)', fromMe: true, desc: Lang.IG_VIDEO_DESC}, (async (message, match) => {
 
         if (message.jid === '905524317852-1612300121@g.us') {
 
             return;
         }
 
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.IG_NEED_VIDEO,MessageType.text);
 
         try {
                     var arama = match[1];
@@ -209,14 +209,10 @@ if (config.WORKTYPE == 'private') {
 
         var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text);
 
-        (async () => {
-            const igvid = await instagram_download.downloadMedia(arama, './')
-            })();
-        igvid.pipe(fs.createWriteStream('./' + arama + '.mp4'));
-
-        igvid.on('end', async () => {
+        async () => {
             reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
+            const igvid = await instagram_download.downloadMedia(arama, './')
+            await message.client.sendMessage(message.jid,fs.readFileSync('./' + igvid), MessageType.video, {mimetype: Mimetype.mp4});
         });
     }));
 
