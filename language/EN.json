@@ -420,7 +420,7 @@
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
             "NOT_FOUND":"User not found: ",
-            "IG_NOT_FOUND": "Video or Photo not found:"
+            "IG_NOT_FOUND": "Account may be private or post deleted..."
         },
         "github": {
             "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy",
