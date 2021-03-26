@@ -93,7 +93,7 @@ if (cn.WORKTYPE == 'private') {
         await message.sendMessage(infoMessage(Lang.IG_LOADING))
 
         await axios
-          .get(`https://videfikri.com/api/igdl/?url=${link}`)
+          .get(`https://videfikri.com/api/igdl/?url=${link}`) //https://lolhuman.herokuapp.com/api/instagram?apikey=156098b3f614ab22fe6e1678&url=
           .then(async (response) => {
             const {
               status,
@@ -107,7 +107,7 @@ if (cn.WORKTYPE == 'private') {
               video,
               duration,
             } = response.data.result
-        if( ${status} == '200' ){
+            
             const videoBuffer = await axios.get(video, {
               responseType: 'arraybuffer',
             })
@@ -128,31 +128,7 @@ if (cn.WORKTYPE == 'private') {
           })
           .catch(
             async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
-          ) 
-    } //if status 200
-     else if( ${status} == '204' ){
-        await axios
-          .get(`https://lolhuman.herokuapp.com/api/instagram?apikey=156098b3f614ab22fe6e1678&url=${link}`)
-          .then(async (response) => {
-            const {
-              status,
-              result
-            } = response.data.result
-        const videoBuffer = await axios.get(result, {
-              responseType: 'arraybuffer',
-            })
-        const msg = `
-            *${Lang.STATUS}*: ${status}
-            *${Lang.ALT}*: ${Lang.ALT_TEXT}
-            `
-            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
-                caption: msg,
-            })
-          })
-          .catch(
-            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
-          ) 
-        }           
+          )           
       },
     )
 }
@@ -231,14 +207,10 @@ else if (cn.WORKTYPE == 'public') {
               caption,
               like,
               comment,
-              thumb,
               video,
               duration,
             } = response.data.result
 
-            const thumbBuffer = await axios.get(thumb, {
-              responseType: 'arraybuffer',
-            })
             const videoBuffer = await axios.get(video, {
               responseType: 'arraybuffer',
             })
@@ -253,11 +225,8 @@ else if (cn.WORKTYPE == 'public') {
             *${Lang.COMMENT}*: ${comment}
             *${Lang.DURATION}*: ${duration}
             `
-
-            await message.sendMessage(Buffer.from(thumbBuffer.data), MessageType.image, {
-              caption: msg,
-            })
             await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg,
             })
           })
           .catch(
