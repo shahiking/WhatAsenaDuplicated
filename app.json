@@ -4,7 +4,7 @@
     "logo": "https://i.hizliresim.com/6Bbj7i.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
     "repository": "https://github.com/br-ut/WhatsAsenaDuplicated",
-    "website":   "https://t.me/phaticusthiccy",
+    "website":   "https://t.me/u_n_k_n_o_w_n_r_b",
     "success_url": "https://t.me/AsenaSupport",
     "stack": "container",
     "env": {
@@ -19,7 +19,7 @@
         "LANGUAGE": {
             "description": "Bot language. Tamil => ta, Azerice => az, English => en, Türkçe => tr, Malayalam => ml, Hindi => HI, Indonesia => ID, Español => ES",
             "required": true,
-            "value": "TR"
+            "value": "EN"
         },
         "HANDLERS": {
             "description": "Komutlar için. For commands.",
