@@ -110,8 +110,6 @@ the user is responsible.
 **WhatsAsena,** is a WhatsApp helper bot written by [Yusuf Usta](https://github.com/Quiec) and edited by [Phaticusthiccy](https://github.com/phaticusthiccy). Does not log into your account It is written on WhatsApp Web API.
 
 ## Setup
-### Very Simple Method
-`Soon as Possible...`
 
 ### Simple Method
 [![Run on Repl.it](https://repl.it/badge/github/phaticusthiccy/WhatsAsenaDuplicated)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
