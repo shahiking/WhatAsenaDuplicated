@@ -96,6 +96,7 @@ if (cn.WORKTYPE == 'private') {
           .get(`https://videfikri.com/api/igdl/?url=${link}`)
           .then(async (response) => {
             const {
+              status,
               creator,
               type_post,
               full_name,
@@ -103,14 +104,10 @@ if (cn.WORKTYPE == 'private') {
               caption,
               like,
               comment,
-              thumb,
               video,
               duration,
             } = response.data.result
-
-            const thumbBuffer = await axios.get(thumb, {
-              responseType: 'arraybuffer',
-            })
+        if( ${status} == '200' ){
             const videoBuffer = await axios.get(video, {
               responseType: 'arraybuffer',
             })
@@ -125,16 +122,37 @@ if (cn.WORKTYPE == 'private') {
             *${Lang.COMMENT}*: ${comment}
             *${Lang.DURATION}*: ${duration}
             `
-
-            await message.sendMessage(Buffer.from(thumbBuffer.data), MessageType.image, {
-              caption: msg,
-            })
             await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg,
             })
           })
           .catch(
             async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
-          )
+          ) 
+    } //if status 200
+     else if( ${status} == '204' ){
+        await axios
+          .get(`https://lolhuman.herokuapp.com/api/instagram?apikey=156098b3f614ab22fe6e1678&url=${link}`)
+          .then(async (response) => {
+            const {
+              status,
+              result
+            } = response.data.result
+        const videoBuffer = await axios.get(result, {
+              responseType: 'arraybuffer',
+            })
+        const msg = `
+            *${Lang.STATUS}*: ${status}
+            *${Lang.ALT}*: ${Lang.ALT_TEXT}
+            `
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg,
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
+          ) 
+        }           
       },
     )
 }
