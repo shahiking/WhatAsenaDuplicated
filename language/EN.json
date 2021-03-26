@@ -420,7 +420,9 @@
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
             "NOT_FOUND":"User not found: ",
-            "IG_NOT_FOUND": "Account may be private or post deleted..."
+            "IG_NOT_FOUND": "Account may be private or post deleted...",
+            "ALT": "Source",
+            "ALT_TEXT": "Downloaded using other API due to daily limit..."
         },
         "github": {
             "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy",
