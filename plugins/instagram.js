@@ -93,35 +93,28 @@ if (cn.WORKTYPE == 'private') {
         await message.sendMessage(infoMessage(Lang.IG_LOADING))
 
         await axios
-          .get(`https://videfikri.com/api/igdl/?url=${link}`) //https://lolhuman.herokuapp.com/api/instagram?apikey=156098b3f614ab22fe6e1678&url=
+          .get(`https://lolhuman.herokuapp.com/api/instagram?apikey=156098b3f614ab22fe6e1678&url=${link}`) //https://videfikri.com/api/igdl/?url=
           .then(async (response) => {
             const {
               status,
-              creator,
-              type_post,
-              full_name,
-              username,
-              caption,
-              like,
-              comment,
-              video,
-              duration,
+              result,
+              //creator,
+             // type_post,
+             // full_name,
+             // username,
+             // caption,
+              //like,
+              //comment,
+              //video,
+             // duration,
             } = response.data.result
             
-            const videoBuffer = await axios.get(video, {
+            const videoBuffer = await axios.get(result, {
               responseType: 'arraybuffer',
             })
 
             const msg = `
             *${Lang.STATUS}*: ${status}
-            *${Lang.NAME}*: ${full_name}
-            *${Lang.USERNAME}*: ${username}
-            *${Lang.CREATOR}*: ${creator}
-            *${Lang.TYPE_POST}*: ${type_post}
-            *${Lang.CAPTION}*: ${caption}
-            *${Lang.LIKE}*: ${like}
-            *${Lang.COMMENT}*: ${comment}
-            *${Lang.DURATION}*: ${duration}
             `
             await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
                 caption: msg,
