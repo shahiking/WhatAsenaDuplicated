@@ -113,6 +113,7 @@ if (cn.WORKTYPE == 'private') {
             })
 
             const msg = `
+            *${Lang.STATUS}*: ${status}
             *${Lang.NAME}*: ${full_name}
             *${Lang.USERNAME}*: ${username}
             *${Lang.CREATOR}*: ${creator}
@@ -200,6 +201,7 @@ else if (cn.WORKTYPE == 'public') {
           .get(`https://videfikri.com/api/igdl/?url=${link}`)
           .then(async (response) => {
             const {
+              status,
               creator,
               type_post,
               full_name,
@@ -216,6 +218,7 @@ else if (cn.WORKTYPE == 'public') {
             })
 
             const msg = `
+            *${Lang.STATUS}*: ${status}
             *${Lang.NAME}*: ${full_name}
             *${Lang.USERNAME}*: ${username}
             *${Lang.CREATOR}*: ${creator}
