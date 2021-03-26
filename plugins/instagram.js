@@ -116,8 +116,9 @@ if (cn.WORKTYPE == 'private') {
             const msg = `
             *${Lang.STATUS}*: ${status}
             `
+            await message.sendMessage(infoMessage(caption: msg))
+            
             await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
-                caption: msg,
             })
           })
           .catch(
