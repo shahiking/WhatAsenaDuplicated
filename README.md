@@ -1,5 +1,5 @@
-## Thanks for Everything 
-### We will always remember you..
+## Thanks for this oppurtunity to edit some codes 
+### We will always do commits...
 
 - [Yusuf Usta](https://github.com/yusufusta)
 - [@fusufs](https://t.me/fusufs)
@@ -16,10 +16,6 @@
   <a href="https://github.com/phaticusthiccy/WhatsAsenaDuplicated/commits/master">
     <img src="https://img.shields.io/github/commit-activity/m/phaticusthiccy/WhatsAsenaDuplicated?style=social">
   </a>
-  <a href="https://i.hizliresim.com/ZtrNkY.png">
-    <img src="https://img.shields.io/badge/Donate-Papara%201%E2%82%BA-important?style=plastic&logo=appveyor">
-  </a>
-
 </p>
 
 <p align="center">
@@ -48,6 +44,12 @@
 
   </a>
 </p>
+
+## Donate
+
+Want to keep this project going? Please donate generously [https://www.buymeacoffee.com/brut](https://www.buymeacoffee.com/brut)
+
+[![Build](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/brut)
 
 ```
 Asena; Asena UserBot, WhatsAsena yazılımı temsil eden adlardır, yazının devamında birbiri yerine kullanılabilir.
