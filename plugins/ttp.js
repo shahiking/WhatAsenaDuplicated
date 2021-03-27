@@ -59,9 +59,19 @@ if (Config.WORKTYPE == 'private') {
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.EMOJI_NEED_WORD, MessageType.text);
 
         const emocode=match[1]
-
-        $emocode = mb_convert_encoding($emocode, 'UTF-32', 'UTF-8');
-        $unicode = strtoupper(bin2hex($emocode));
+        var comp;
+        if (emocode.length === 1) {
+        comp = emocode.charCodeAt(0);
+        }
+        comp = (
+        (emocode.charCodeAt(0) - 0xD800) * 0x400
+      + (emocode.charCodeAt(1) - 0xDC00) + 0x10000
+     );
+        if (comp < 0) {
+            comp = emocode.charCodeAt(0);
+        }
+        const unicode=comp.toString("16");
+};
 
         const link=`https://videfikri.com/api/emojitopng/?emojicode=${unicode}`
 
