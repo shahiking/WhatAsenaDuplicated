@@ -88,8 +88,6 @@ the user is responsible.
 </p>
 
 ----
-![Docker Pulls] ![Docker Image Size (latest by date)]
-
 ## 📢 Guide
 > [Also for support & help please come our Telegram group.](https://t.me/AsenaSupport) (Legacy)
 
