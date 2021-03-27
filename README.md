@@ -88,7 +88,7 @@ the user is responsible.
 </p>
 
 ----
-![Docker Pulls](https://i.ibb.co/HNJy6DS/Clipart-Key-1953791.png) ![Docker Image Size (latest by date)](https://i.ibb.co/HNJy6DS/Clipart-Key-1953791.png)
+![Docker Pulls](https://i.ibb.co/Y8Z4Jy3/7e5b2de2-bafe-4b3a-88ed-fd47999af537.png) ![Docker Image Size (latest by date)](https://i.ibb.co/Y8Z4Jy3/7e5b2de2-bafe-4b3a-88ed-fd47999af537.png)
 
 ## 📢 Guide
 > [Also for support & help please come our Telegram group.](https://t.me/AsenaSupport) (Legacy)
