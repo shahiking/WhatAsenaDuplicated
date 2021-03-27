@@ -61,6 +61,38 @@ if (Config.WORKTYPE == 'private') {
         await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.png, caption: 'Made by WhatsAsena' })
 
     }));
+    
+    Asena.addCommand({ pattern: 'quotes ?(.*)', fromMe: true, desc: Lang.QUOTES_DESC }, (async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+
+        if (match[1] === '') return await message.sendMessage(Lang.QUOTES_NEED_WORD);
+
+        await axios
+          .get(`https://videfikri.com/api/randomquotes/`)
+          .then(async (response) => {
+            const {
+              author,
+              quotes,
+            } = response.data.result
+
+            const msg = `
+            *${Lang.QUOTES}*: ${quotes}
+            *${Lang.AUTHOR}*: ${author}
+            `
+            await message.client.sendMessage(message.jid,msg,MessageType.text);
+
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.QUOTES_NOT_FOUND + link)),
+          )
+      },
+    ));
+
 }
 else if (Config.WORKTYPE == 'public') {
 
@@ -111,4 +143,36 @@ else if (Config.WORKTYPE == 'public') {
         await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.png, caption: 'Made by WhatsAsena' })
 
     }));
+    
+    Asena.addCommand({ pattern: 'quotes ?(.*)', fromMe: true, desc: Lang.QUOTES_DESC }, (async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+
+        if (match[1] === '') return await message.sendMessage(Lang.QUOTES_NEED_WORD);
+
+        await axios
+          .get(`https://videfikri.com/api/randomquotes/`)
+          .then(async (response) => {
+            const {
+              author,
+              quotes,
+            } = response.data.result
+
+            const msg = `
+            *${Lang.QUOTES}*: ${quotes}
+            *${Lang.AUTHOR}*: ${author}
+            `
+            await message.client.sendMessage(message.jid,msg,MessageType.text);
+
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.QUOTES_NOT_FOUND + link)),
+          )
+      },
+    ));
+
 }
