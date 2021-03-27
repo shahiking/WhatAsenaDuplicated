@@ -438,8 +438,10 @@
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
             "NOT_FOUND":"User not found: ",
-            "IG_NOT_FOUND": "Account may be private or post deleted...",
-            "FB_NOT_FOUND": "Sorry! Unable to fetch the file...",
+            "IG_NOT_FOUND": "Account may be private or post deleted:",
+            "FB_NOT_FOUND": "Sorry! Unable to fetch the file:",
+            "TTK_NOT_FOUND": "Sorry! Unable to fetch the file:",
+            "TWEET_NOT_FOUND": "User not found:",
             "ALT": "Source",
             "ALT_TEXT": "Downloaded using other API due to daily limit...",
             "HTTP_STATUS": "HTTP_STATUS"
