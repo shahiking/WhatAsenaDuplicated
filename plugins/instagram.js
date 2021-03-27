@@ -130,6 +130,49 @@ if (cn.WORKTYPE == 'private') {
           )           
       },
     )
+    
+    Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: true, usage: Lang.IG_USAGE, desc: Lang.IG_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const link = match[1]
+
+        if (!link) return await message.sendMessage(errorMessage(Lang.IG_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.IG_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/fbdl/?urlfb=${link}`)
+          .then(async (response) => {
+            const {
+              status,
+              creator,
+              judul,
+              url,
+            } = response.data.result
+
+            const videoBuffer = await axios.get(url, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.CAPTION}*: ${judul}
+            `
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
+          )
+      },
+    )
+
 }
 else if (cn.WORKTYPE == 'public') {
 
@@ -233,4 +276,47 @@ else if (cn.WORKTYPE == 'public') {
           )           
       },
     )
+    
+    Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: true, usage: Lang.IG_USAGE, desc: Lang.IG_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const link = match[1]
+
+        if (!link) return await message.sendMessage(errorMessage(Lang.IG_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.IG_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/fbdl/?urlfb=${link}`)
+          .then(async (response) => {
+            const {
+              status,
+              creator,
+              judul,
+              url,
+            } = response.data.result
+
+            const videoBuffer = await axios.get(url, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.CAPTION}*: ${judul}
+            `
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
+          )
+      },
+    )
+
 }
