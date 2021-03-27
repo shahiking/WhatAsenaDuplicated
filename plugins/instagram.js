@@ -175,6 +175,117 @@ if (cn.WORKTYPE == 'private') {
       },
     )
 
+    Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, usage: Lang.TTK_USAGE, desc: Lang.TTK_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const ttk_link = match[1]
+
+        if (!ttk_link) return await message.sendMessage(errorMessage(Lang.TTK_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.TTK_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/tiktok/?url=${ttk_link}`)
+          .then(async (response) => {
+            const {
+              status,
+              creator,
+              username,
+              caption,
+              link,
+              uploaded_on,
+            } = response.data.result
+
+            const videoBuffer = await axios.get(link, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.USERNAME}*: ${username}
+            *${Lang.CAPTION}*: ${caption}
+            *${Lang.UPLOADED_ON}*: ${uploaded_on}
+            `
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.TTK_NOT_FOUND + link)),
+          )
+      },
+    )
+
+    Asena.addCommand({ pattern: 'twitter ?(.*)', fromMe: true, usage: Lang.TWEET_USAGE, desc: Lang.TWEET_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const link = match[1]
+
+        if (!link) return await message.sendMessage(errorMessage(Lang.TWEET_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.TWEET_LOADING))
+
+                await axios
+                  .get(`https://videfikri.com/api/stalktwit/?username=${link}`)
+                  .then(async (response) => {
+                    const {
+                      status,
+                      creator,
+                      full_name,
+                      username,
+                      followers,
+                      following,
+                      tweets,
+                      profile,
+                      verified,
+                      listed_count,
+                      favourites,
+                      joined_on,
+                      profile_banner,
+                    } = response.data.result
+
+                    const profileBuffer = await axios.get(profile, {
+                          responseType: 'arraybuffer',
+                        })
+
+                    const bannerBuffer = await axios.get(profile_banner, {
+                          responseType: 'arraybuffer',
+                })
+
+                    const msg = `
+                    *${Lang.HTTP_STATUS}*: ${status}
+                    *${Lang.CREATOR}*: ${creator}
+                    *${Lang.USERNAME}*: ${username}
+                    *${Lang.FULL_NAME}*: ${full_name}
+                    *${Lang.FOLLOWERS}*: ${followers}
+                    *${Lang.FOLLOWING}*: ${following}
+                    *${Lang.TWEETS}*: ${tweets}
+                    *${Lang.VERIFIED}*: ${verified}
+                    *${Lang.LISTED_COUNT}*: ${listed_count}
+                    *${Lang.FAVOURITES}*: ${favourites}
+                    *${Lang.JOINED_ON}*: ${joined_on}
+                    `
+                    await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
+                        caption: msg
+                    })
+                    await message.sendMessage(Buffer.from(bannerBuffer.data), MessageType.image, {
+                    })
+                  })
+                  .catch(
+                    async (err) => await message.sendMessage(errorMessage(Lang.TWEET_NOT_FOUND + link)),
+                  )
+              },
+            )
+
 }
 else if (cn.WORKTYPE == 'public') {
 
@@ -322,5 +433,116 @@ else if (cn.WORKTYPE == 'public') {
           )
       },
     )
+
+    Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, usage: Lang.TTK_USAGE, desc: Lang.TTK_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const ttk_link = match[1]
+
+        if (!ttk_link) return await message.sendMessage(errorMessage(Lang.TTK_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.TTK_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/tiktok/?url=${ttk_link}`)
+          .then(async (response) => {
+            const {
+              status,
+              creator,
+              username,
+              caption,
+              link,
+              uploaded_on,
+            } = response.data.result
+
+            const videoBuffer = await axios.get(link, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.USERNAME}*: ${username}
+            *${Lang.CAPTION}*: ${caption}
+            *${Lang.UPLOADED_ON}*: ${uploaded_on}
+            `
+            await message.sendMessage(Buffer.from(videoBuffer.data), MessageType.video, {
+                caption: msg
+            })
+          })
+          .catch(
+            async (err) => await message.sendMessage(errorMessage(Lang.TTK_NOT_FOUND + link)),
+          )
+      },
+    )
+
+    Asena.addCommand({ pattern: 'twitter ?(.*)', fromMe: true, usage: Lang.TWEET_USAGE, desc: Lang.TWEET_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const link = match[1]
+
+        if (!link) return await message.sendMessage(errorMessage(Lang.TWEET_NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.TWEET_LOADING))
+
+                await axios
+                  .get(`https://videfikri.com/api/stalktwit/?username=${link}`)
+                  .then(async (response) => {
+                    const {
+                      status,
+                      creator,
+                      full_name,
+                      username,
+                      followers,
+                      following,
+                      tweets,
+                      profile,
+                      verified,
+                      listed_count,
+                      favourites,
+                      joined_on,
+                      profile_banner,
+                    } = response.data.result
+
+                    const profileBuffer = await axios.get(profile, {
+                          responseType: 'arraybuffer',
+                        })
+
+                    const bannerBuffer = await axios.get(profile_banner, {
+                          responseType: 'arraybuffer',
+                })
+
+                    const msg = `
+                    *${Lang.HTTP_STATUS}*: ${status}
+                    *${Lang.CREATOR}*: ${creator}
+                    *${Lang.USERNAME}*: ${username}
+                    *${Lang.FULL_NAME}*: ${full_name}
+                    *${Lang.FOLLOWERS}*: ${followers}
+                    *${Lang.FOLLOWING}*: ${following}
+                    *${Lang.TWEETS}*: ${tweets}
+                    *${Lang.VERIFIED}*: ${verified}
+                    *${Lang.LISTED_COUNT}*: ${listed_count}
+                    *${Lang.FAVOURITES}*: ${favourites}
+                    *${Lang.JOINED_ON}*: ${joined_on}
+                    `
+                    await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
+                        caption: msg
+                    })
+                    await message.sendMessage(Buffer.from(bannerBuffer.data), MessageType.image, {
+                    })
+                  })
+                  .catch(
+                    async (err) => await message.sendMessage(errorMessage(Lang.TWEET_NOT_FOUND + link)),
+                  )
+              },
+            )
 
 }
