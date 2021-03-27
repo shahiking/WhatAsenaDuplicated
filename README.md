@@ -95,8 +95,6 @@ the user is responsible.
 
 > [New support & help group.](https://t.me/asenaremaster) (New)
 
-> [Install Guide/Kurulum Yardımcısı/Qurulum Müavin](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki)
-
 ## 🔎 What is WhatsAsena?
 **WhatsAsena,** is a WhatsApp helper bot written by [Yusuf Usta](https://github.com/Quiec) and edited by [Phaticusthiccy](https://github.com/phaticusthiccy). Does not log into your account It is written on WhatsApp Web API.
 
@@ -121,13 +119,6 @@ $ nano Config.env
 $ node bot.js
 ```
 
-##
-
-### ⚒️ Setup Wiki 
-[![Setup - Kurulum](https://img.icons8.com/clouds/300/000000/settings.png)](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki)
-
-##
-
 ## F.A.Q
 Answer a few frequently asked questions;
 ### Can you read my messages?
@@ -141,15 +132,6 @@ If you are concerned about security, you can install it on your own computer. If
 
 ### What does Asena mean?
 [Asena](https://tr.wikipedia.org/wiki/Asena), comes from Turkish mythology. According to Turkish mythology, Asena is a she-wolf that plays an important role.
-
-##
-
-### WhatsAsena Features ✨
-
-Here Are All Commands With Description
-[GistHub](https://gist.github.com/phaticusthiccy/8dfa827a71647e5f659680d75543a748)
-
-##
 
 ### ⚠️ Warning! 
 ```
