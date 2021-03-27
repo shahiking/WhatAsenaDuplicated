@@ -5,6 +5,52 @@
 - [@fusufs](https://t.me/fusufs)
 - [phaticusthiccy](https://github.com/phaticusthiccy)
 
+# Features
+If you want to unlock premium commands, please buy me a coffee at least 1 on Ko-fi platform.
+
+|     Sticker Maker     | Availability |
+| :-------------------: | :----------: |
+| Text to sticker       |      ✔️      |
+| Text to sticker GIF   |      ✔️      |
+| Sticker to image      |      ✔️      |
+
+
+|      Downloader     | Availability |
+| :-----------------: | :----------: |
+| Facebook video      |      ✔️      |
+| YouTube audio/video |      ✔️      |
+| Twitter profile     |      ✔️      |
+| Instagram post      |      ✔️      |
+| Instagram profile   |      ✔️      |
+| TikTok no WM        |      ✔️      |
+
+|        Bot       | Availability |
+| :--------------: | :----------: |
+| Server usage     |      ✔️      |
+| Ping             |      ✔️      |
+| Bug report       |      ✔️      |
+
+|        Owner       | Availability |
+| :----------------: | :----------: |
+| Get snapshot       |      ✔️      |
+| Ban                |      ✔️      |
+| Shutdown           |      ✔️      |
+| Set bot's info     |      ✔️      |
+| Block              |      ✔️      |
+| Unblock            |      ✔️      |
+
+|    Moderation    | Availability |
+| :--------------: | :----------: |
+| Add              |      ✔️      |
+| Kick             |      ✔️      |
+| Promote          |      ✔️      |
+| Demote           |      ✔️      |
+| Everyone         |      ✔️      |
+| group link  |           ✔️      |
+| Toogle welcome   |      ✔️      |
+| Mute group       |      ✔️      |
+
+
 ## Donate
 
 Want to keep this project going? Please donate generously [https://www.buymeacoffee.com/brut](https://www.buymeacoffee.com/brut)
