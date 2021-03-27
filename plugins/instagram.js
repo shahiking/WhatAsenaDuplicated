@@ -133,7 +133,7 @@ if (cn.WORKTYPE == 'private') {
       },
     )
     
-    Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: true, usage: Lang.IG_USAGE, desc: Lang.IG_DESC }, async (message, match) => {
+    Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: true, usage: Lang.FB_USAGE, desc: Lang.FB_DESC }, async (message, match) => {
 
         if (message.jid === '905524317852-1612300121@g.us') {
 
@@ -142,9 +142,9 @@ if (cn.WORKTYPE == 'private') {
 
         const link = match[1]
 
-        if (!link) return await message.sendMessage(errorMessage(Lang.IG_NEED_WORD))
+        if (!link) return await message.sendMessage(errorMessage(Lang.FB_NEED_WORD))
 
-        await message.sendMessage(infoMessage(Lang.IG_LOADING))
+        await message.sendMessage(infoMessage(Lang.FB_LOADING))
 
         await axios
           .get(`https://videfikri.com/api/fbdl/?urlfb=${link}`)
@@ -170,7 +170,7 @@ if (cn.WORKTYPE == 'private') {
             })
           })
           .catch(
-            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
+            async (err) => await message.sendMessage(errorMessage(Lang.FB_NOT_FOUND + link)),
           )
       },
     )
@@ -281,7 +281,7 @@ else if (cn.WORKTYPE == 'public') {
       },
     )
     
-    Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: true, usage: Lang.IG_USAGE, desc: Lang.IG_DESC }, async (message, match) => {
+    Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: true, usage: Lang.FB_USAGE, desc: Lang.FB_DESC }, async (message, match) => {
 
         if (message.jid === '905524317852-1612300121@g.us') {
 
@@ -290,9 +290,9 @@ else if (cn.WORKTYPE == 'public') {
 
         const link = match[1]
 
-        if (!link) return await message.sendMessage(errorMessage(Lang.IG_NEED_WORD))
+        if (!link) return await message.sendMessage(errorMessage(Lang.FB_NEED_WORD))
 
-        await message.sendMessage(infoMessage(Lang.IG_LOADING))
+        await message.sendMessage(infoMessage(Lang.FB_LOADING))
 
         await axios
           .get(`https://videfikri.com/api/fbdl/?urlfb=${link}`)
@@ -318,7 +318,7 @@ else if (cn.WORKTYPE == 'public') {
             })
           })
           .catch(
-            async (err) => await message.sendMessage(errorMessage(Lang.IG_NOT_FOUND + link)),
+            async (err) => await message.sendMessage(errorMessage(Lang.FB_NOT_FOUND + link)),
           )
       },
     )
