@@ -96,6 +96,7 @@ if (cn.WORKTYPE == 'private') {
           .get(`https://videfikri.com/api/igdl/?url=${link}`)
           .then(async (response) => {
             const {
+              status,  
               creator,
               type_post,
               full_name,
@@ -112,6 +113,7 @@ if (cn.WORKTYPE == 'private') {
             })
 
             const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
             *${Lang.CREATOR}*: ${creator}
             *${Lang.TYPE_HOST}*: ${type_post}
             *${Lang.FULL_NAME}*: ${full_name}
@@ -242,6 +244,7 @@ else if (cn.WORKTYPE == 'public') {
           .get(`https://videfikri.com/api/igdl/?url=${link}`)
           .then(async (response) => {
             const {
+              status,
               creator,
               type_post,
               full_name,
@@ -258,6 +261,7 @@ else if (cn.WORKTYPE == 'public') {
             })
 
             const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
             *${Lang.CREATOR}*: ${creator}
             *${Lang.TYPE_HOST}*: ${type_post}
             *${Lang.FULL_NAME}*: ${full_name}
