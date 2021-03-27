@@ -368,7 +368,9 @@
             "NEED_WORD": "*You must enter words!*",
             "ANIME_DESC": "It writes the text inside the banner the anime girl is holding",
             "TRUMP_DESC": "Converts the text to Trump's tweet.",
-            "CHANGE_DESC": "Turns the text into the change my mind poster."
+            "CHANGE_DESC": "Turns the text into the change my mind poster.",
+            "EMOJI_DESC": "Converts emoji to .png image ",
+            "EMOJI_NEED_WORD": "enter any emoji..."
         },
         "wallpaper": {
             "WP": "It sends high resolution wallpapers."
