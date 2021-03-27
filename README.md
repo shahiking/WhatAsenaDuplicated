@@ -88,7 +88,7 @@ the user is responsible.
 </p>
 
 ----
-![Docker Pulls](https://ibb.co/R7zPFHg) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/fusuf/whatsasena?style=flat-square)
+![Docker Pulls](https://ibb.co/R7zPFHg) ![Docker Image Size (latest by date)](https://ibb.co/R7zPFHg)
 
 ## 📢 Guide
 > [Also for support & help please come our Telegram group.](https://t.me/AsenaSupport) (Legacy)
