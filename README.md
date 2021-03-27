@@ -13,6 +13,7 @@ If you want to unlock premium commands, please buy me a coffee at least 1 on Ko-
 | Text to sticker       |      ✔️      |
 | Text to sticker GIF   |      ✔️      |
 | Sticker to image      |      ✔️      |
+| Emoji to image        |      ✔️      |
 
 
 |      Downloader     | Availability |
@@ -29,6 +30,7 @@ If you want to unlock premium commands, please buy me a coffee at least 1 on Ko-
 | Server usage     |      ✔️      |
 | Ping             |      ✔️      |
 | Bug report       |      ✔️      |
+| Random Qoutes    |      ✔️      |
 
 |        Owner       | Availability |
 | :----------------: | :----------: |
@@ -46,7 +48,7 @@ If you want to unlock premium commands, please buy me a coffee at least 1 on Ko-
 | Promote          |      ✔️      |
 | Demote           |      ✔️      |
 | Everyone         |      ✔️      |
-| group link  |           ✔️      |
+| group link       |      ✔️      |
 | Toogle welcome   |      ✔️      |
 | Mute group       |      ✔️      |
 
