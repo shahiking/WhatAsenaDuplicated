@@ -88,7 +88,7 @@ the user is responsible.
 </p>
 
 ----
-![Docker Pulls](https://i.ibb.co/N38BrNh/Clipart-Key-1953791-removebg-preview.png) ![Docker Image Size (latest by date)](https://i.ibb.co/N38BrNh/Clipart-Key-1953791-removebg-preview.png)
+![Docker Pulls]() ![Docker Image Size (latest by date)]()
 
 ## 📢 Guide
 > [Also for support & help please come our Telegram group.](https://t.me/AsenaSupport) (Legacy)
