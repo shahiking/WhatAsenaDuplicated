@@ -47,6 +47,33 @@ if (Config.WORKTYPE == 'private') {
         await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.sticker, { mimetype: Mimetype.webp })
 
     }));
+    
+    Asena.addCommand({ pattern: 'emoji ?(.*)', fromMe: true, desc: Lang.EMOJI_DESC }, (async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.EMOJI_NEED_WORD, MessageType.text);
+
+        const emocode=match[1]
+
+        $emocode = mb_convert_encoding($emocode, 'UTF-32', 'UTF-8');
+        $unicode = strtoupper(bin2hex($emocode));
+
+        const link=`https://videfikri.com/api/emojitopng/?emojicode=${unicode}`
+
+        const emojiBuffer = await axios.get(link, {
+          responseType: 'arraybuffer',
+        })
+
+        await message.sendMessage(Buffer.from(emojiBuffer.data), MessageType.image, {
+        })
+
+        }));
+
 }
 else if (Config.WORKTYPE == 'public') {
 
@@ -82,4 +109,31 @@ else if (Config.WORKTYPE == 'public') {
         await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.sticker, { mimetype: Mimetype.webp })
 
     }));
+    
+    Asena.addCommand({ pattern: 'emoji ?(.*)', fromMe: true, desc: Lang.EMOJI_DESC }, (async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.EMOJI_NEED_WORD, MessageType.text);
+
+        const emocode=match[1]
+
+        $emocode = mb_convert_encoding($emocode, 'UTF-32', 'UTF-8');
+        $unicode = strtoupper(bin2hex($emocode));
+
+        const link=`https://videfikri.com/api/emojitopng/?emojicode=${unicode}`
+
+        const emojiBuffer = await axios.get(link, {
+          responseType: 'arraybuffer',
+        })
+
+        await message.sendMessage(Buffer.from(emojiBuffer.data), MessageType.image, {
+        })
+
+        }));
+
 }
