@@ -200,7 +200,7 @@ if (cn.WORKTYPE == 'private') {
               uploaded_on,
             } = response.data.result
 
-            const videoBuffer = await axios.get(${link}, {
+            const videoBuffer = await axios.get(link, {
               responseType: 'arraybuffer',
             })
 
