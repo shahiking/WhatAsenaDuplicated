@@ -21,8 +21,8 @@
 const Asena = require('../events')
 const { MessageType } = require('@adiwajshing/baileys')
 const axios = require('axios')
-const cn = require('../config');
-const wis = require('whois')
+const cn = require('../config')
+const wis = require('whois');
 
 const Language = require('../language')
 const { errorMessage, infoMessage } = require('../helpers')
