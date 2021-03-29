@@ -34,9 +34,12 @@ if (cn.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'whoois ?(.*)', fromMe: true, deleteCommand: false, desc: Lang.URL}, (async (message, match) => {
                 var url= match[1]
                 wis.lookup(url, function(err, data) {
-                  await message.client.sendMessage(message.jid, data, MessageType.text);
+                  const textBuffer = await axios.get(data, {
+                       responseType: 'arraybuffer',
+           })
                                     })
-
+                await message.sendMessage(Buffer.from(textBuffer.data), MessageType.text, {
+                  })
     }));
     
     Asena.addCommand({ pattern: 'randanime', fromMe: true }, async (message, match) => {
