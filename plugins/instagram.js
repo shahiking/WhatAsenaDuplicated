@@ -174,6 +174,45 @@ if (cn.WORKTYPE == 'private') {
           )
       },
     )
+    
+    Asena.addCommand({ pattern: 'mailspam ?(.*)', fromMe: true, usage: Lang.SPAM_MAIL_USAGE, desc: Lang.SPAM_MAIL_DESC }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        const mailid = match[1]
+        const subj = match[2]
+        const messge = match[3]
+
+        await message.sendMessage(infoMessage(Lang.SPAM_MAIL_LOADING))
+
+        await axios
+          .get(`https://videfikri.com/api/spamemail/?email=${mailid}&subjek=${subj}&pesan=${messge}`)
+          .then(async (response) => {
+            const {
+              status,
+              creator,
+              target,
+              subjek,
+              pesan,
+              log_lengkap,
+            } = response.data.result
+
+            const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
+            *${Lang.CREATOR}*: ${creator}
+            *${Lang.TARGET}*: ${target}
+            *${Lang.SUBJECT}*: ${subjek}
+            *${Lang.MESSAGE}*: ${pesan}
+            *${Lang.LOG}*: ${log_lengkap}
+            `
+
+            await message.client.sendMessage(message.jid, msg, MessageType.text);
+          })
+      },
+    )
 
     Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, usage: Lang.TTK_USAGE, desc: Lang.TTK_DESC }, async (message, match) => {
 
