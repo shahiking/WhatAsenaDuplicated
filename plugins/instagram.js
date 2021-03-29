@@ -21,8 +21,8 @@
 const Asena = require('../events')
 const { MessageType } = require('@adiwajshing/baileys')
 const axios = require('axios')
-const cn = require('../config')
-const wis = require('whois');
+const cn = require('../config');
+
 
 const Language = require('../language')
 const { errorMessage, infoMessage } = require('../helpers')
@@ -30,18 +30,7 @@ const Lang = Language.getString('instagram')
 
 
 if (cn.WORKTYPE == 'private') {
-    
-    Asena.addCommand({pattern: 'whoois ?(.*)', fromMe: true, deleteCommand: false, desc: Lang.URL}, (async (message, match) => {
-                var url= match[1]
-                wis.lookup(url, function(err, data) {
-                  const textBuffer = await axios.get(data, {
-                       responseType: 'arraybuffer',
-           })
-                                    })
-                await message.sendMessage(Buffer.from(textBuffer.data), MessageType.text, {
-                  })
-    }));
-    
+     
     Asena.addCommand({ pattern: 'randanime', fromMe: true }, async (message, match) => {
 
         if (message.jid === '905524317852-1612300121@g.us') {
