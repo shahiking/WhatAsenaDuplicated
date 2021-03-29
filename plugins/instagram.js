@@ -29,6 +29,35 @@ const Lang = Language.getString('instagram')
 
 
 if (cn.WORKTYPE == 'private') {
+    
+    Asena.addCommand({ pattern: 'randanime', fromMe: true }, async (message, match) => {
+
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+        await axios
+          .get(`https://videfikri.com/api/anime/neko`)
+          .then(async (response) => {
+            const {
+              status,
+              url_gbr,
+            } = response.data.result
+
+            const imageBuffer = await axios.get(url_gbr, {
+              responseType: 'arraybuffer',
+            })
+
+            const msg = `
+            *${Lang.HTTP_STATUS}*: ${status}
+            `
+            await message.sendMessage(Buffer.from(imageBuffer.data), MessageType.image, {
+                caption: msg
+            })
+          })
+      },
+    )
 
     Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
