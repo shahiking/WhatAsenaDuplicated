@@ -6,7 +6,6 @@
 - [phaticusthiccy](https://github.com/phaticusthiccy)
 
 # Features
-If you want to unlock premium commands, please buy me a coffee at least 1 on Ko-fi platform.
 
 |     Sticker Maker     | Availability |
 | :-------------------: | :----------: |
@@ -24,6 +23,7 @@ If you want to unlock premium commands, please buy me a coffee at least 1 on Ko-
 | Instagram post      |      ✔️      |
 | Instagram profile   |      ✔️      |
 | TikTok no WM        |      ✔️      |
+| Random Neko anime   |      ✔️      |
 
 |        Bot       | Availability |
 | :--------------: | :----------: |
