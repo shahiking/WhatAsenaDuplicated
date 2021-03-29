@@ -53,20 +53,6 @@ Asena.addCommand({pattern: 'ping', fromMe: true, deleteCommand: false, desc: Lan
     message.jid,'*Pong!*\n```' + (end - start) + 'ms```', MessageType.text);
 }));
 
-Asena.addCommand({pattern: 'whois ?(.*)', fromMe: true, deleteCommand: false, desc: Lang.URL}, (async (message, match) => {
-                var url= match[1]
-                var wis = require('whois')
-                wis.lookup(url, function(err, data) {
-                  if(err){
-                    await message.client.sendMessage(message.jid, '*#### Error! ####*\n\n' + '```' + err + '```', MessageType.text);
-                  }
-                  else{
-                    await message.client.sendMessage(message.jid, data, MessageType.text);
-                  }
-                  })
-
-    }));
-
 Asena.addCommand({pattern: 'short ?(.*)', fromMe: true, desc: Lang.URL}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid, SLang.LİNK, MessageType.text);
