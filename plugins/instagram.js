@@ -22,6 +22,7 @@ const Asena = require('../events')
 const { MessageType } = require('@adiwajshing/baileys')
 const axios = require('axios')
 const cn = require('../config');
+const wis = require('whois')
 
 const Language = require('../language')
 const { errorMessage, infoMessage } = require('../helpers')
@@ -29,6 +30,14 @@ const Lang = Language.getString('instagram')
 
 
 if (cn.WORKTYPE == 'private') {
+    
+    Asena.addCommand({pattern: 'whoois ?(.*)', fromMe: true, deleteCommand: false, desc: Lang.URL}, (async (message, match) => {
+                var url= match[1]
+                wis.lookup(url, function(err, data) {
+                  await message.client.sendMessage(message.jid, data, MessageType.text);
+                                    })
+
+    }));
     
     Asena.addCommand({ pattern: 'randanime', fromMe: true }, async (message, match) => {
 
